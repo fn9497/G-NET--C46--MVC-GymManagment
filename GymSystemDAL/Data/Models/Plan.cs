@@ -1,4 +1,5 @@
-﻿using GymSystemDAL.Models;
+﻿using GymSystemDAL.Data.Models;
+using GymSystemDAL.Models;
 
 namespace GymSystem.Models
 {
@@ -12,6 +13,8 @@ namespace GymSystem.Models
         public int DurationDays { get; set; }
         public bool IsActive { get; set; }
 
-
+        #region Relationship
+        public ICollection<Membership> PlanMember { get; set; } = default!;
+        #endregion
     }
 }

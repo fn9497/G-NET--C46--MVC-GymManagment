@@ -1,4 +1,5 @@
-﻿using GymSystemDAL.Models;
+﻿using GymSystemDAL.Data.Models;
+using GymSystemDAL.Models;
 
 namespace GymSystem.Models
 {
@@ -6,5 +7,13 @@ namespace GymSystem.Models
     {
         public string ? Photo { get; set; }
         //joindate==CreatedAt
+
+        #region Relationship
+         HealthRecord HealthRecord { get; set; } = default!;   
+        
+        public ICollection<Membership> Memberships { get; set; } = default!;
+
+        public ICollection<Booking> MemberSession { get; set; } = default!;
+        #endregion
     }
 }

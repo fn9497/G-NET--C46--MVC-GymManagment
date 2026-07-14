@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymSystem.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,10 @@ namespace GymSystemDAL.Models
         public string? Note { get; set; }
 
         public string BloodType { get; set; } = default;
+
+        #region Relationship
+            public Member Member { get; set; } = default!;
+        public int memberId { get; set; }
+        #endregion
     }
 }
