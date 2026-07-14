@@ -1,0 +1,23 @@
+﻿using GymSystemDAL.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GymSystemDAL.Data.Configuration
+{
+    public class SessionConfigration : IEntityTypeConfiguration<Session>
+    {
+        public void Configure(EntityTypeBuilder<Session> builder)
+        {
+            builder.ToTable(tb =>
+            { 
+                tb.HasCheckConstraint("SessionCapacityCheck", "Capacity between 1 to 25");
+                tb.HasCheckConstraint("SessionEndDate", "EndDate > StartDate ");
+            });
+        }
+    }
+}
