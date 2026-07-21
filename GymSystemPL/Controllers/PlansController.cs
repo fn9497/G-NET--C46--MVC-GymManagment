@@ -1,4 +1,5 @@
 ﻿using GymSystem.DbContexts;
+using GymSystem.Models;
 using GymSystemDAL.Repositories.Classes;
 using GymSystemDAL.Repositories.Interface;
 using Microsoft.AspNetCore.Mvc;
@@ -8,16 +9,11 @@ namespace GymSystem.Controllers
 {
     public class PlansController : Controller
     {
-        //private readonly GymDbContext dbContext;
-        //public PlansController()
-        //{
-        //    dbContext = new GymDbContext();
-        //}
-        private readonly IplanRepository planRepository;
+        private readonly IGenaricRepository<Plan> planRepository;
 
-        public PlansController(IplanRepository _planRepository)
+        public PlansController(IGenaricRepository<Plan> PlanRepository)
         {
-            this.planRepository = _planRepository;
+            planRepository = PlanRepository;
         }
 
         //Get data
