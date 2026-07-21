@@ -13,7 +13,13 @@ namespace GymSystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+<<<<<<< Updated upstream
             builder.Services.AddScoped<IplanRepository,PlanRepository>();
+=======
+            builder.Services.AddScoped(typeof(IGenaricRepository<>) ,typeof(GenaricRepository<>));
+            builder.Services.AddScoped<IMemberService, MemberService>();
+            builder.Services.AddScoped<ITrainerService, TrainerService>();
+>>>>>>> Stashed changes
             builder.Services.AddDbContext<GymDbContext>(
                 option =>
                 {
