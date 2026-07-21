@@ -34,9 +34,6 @@ namespace GymSystemDAL.Data.Configuration
 
         }
 
-        internal void Configure(EntityTypeBuilder<Member> builder)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

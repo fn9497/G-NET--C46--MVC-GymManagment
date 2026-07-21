@@ -11,8 +11,11 @@ namespace GymSystemBLL.Sevice.Interfaces
     public interface IMemberService
     {
         Task<IEnumerable<MemberViewModel>> GetAllMembersAsync(CancellationToken ct = default);
+<<<<<<< HEAD
         Task<bool> CreateMemberAsync(CreateMemberViewModel model, CancellationToken ct = default);
 
         Task<MemberViewModel> GetMemberDetailsById(int memberid, CancellationToken ct = default);
+=======
+>>>>>>> dev
     }
 }

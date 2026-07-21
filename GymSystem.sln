@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymSystemBLL", "GymSystemBL
 		{13EEE02D-D39D-443E-8071-A5F872536A89} = {13EEE02D-D39D-443E-8071-A5F872536A89}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymSystemPL", "GymSystemPL0\GymSystemPL.csproj", "{E4FBED38-535C-4F6D-8E97-0ED9CB3579DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymSystemPL", "GymSystemPL\GymSystemPL.csproj", "{B3D66844-2F8B-BC13-436A-B0DC8BDAE012}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +26,10 @@ Global
 		{EECDE373-FE60-4067-962D-498604356290}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EECDE373-FE60-4067-962D-498604356290}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EECDE373-FE60-4067-962D-498604356290}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E4FBED38-535C-4F6D-8E97-0ED9CB3579DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4FBED38-535C-4F6D-8E97-0ED9CB3579DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4FBED38-535C-4F6D-8E97-0ED9CB3579DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4FBED38-535C-4F6D-8E97-0ED9CB3579DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D66844-2F8B-BC13-436A-B0DC8BDAE012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D66844-2F8B-BC13-436A-B0DC8BDAE012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D66844-2F8B-BC13-436A-B0DC8BDAE012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D66844-2F8B-BC13-436A-B0DC8BDAE012}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
