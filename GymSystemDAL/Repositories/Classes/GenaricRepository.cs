@@ -6,9 +6,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Linq.Expressions;
 =======
 >>>>>>> dev
+=======
+
+using System.Linq.Expressions;
+
+>>>>>>> backup-before-merge
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,13 +38,20 @@ namespace GymSystemDAL.Repositories.Classes
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> backup-before-merge
         public Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct = default)
         {
             return _dbSet.AsNoTracking().AnyAsync(predicate, ct);
         }
 
+<<<<<<< HEAD
 =======
 >>>>>>> dev
+=======
+
+>>>>>>> backup-before-merge
         public async Task<int> DeleteAsync(TEntity entity)
         {
             _dbSet.Remove(entity);
@@ -46,14 +59,20 @@ namespace GymSystemDAL.Repositories.Classes
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> backup-before-merge
         public async Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, bool tracking = false, CancellationToken ct = default)
         {
             IQueryable<TEntity> query = tracking ? _dbSet : _dbSet.AsNoTracking();
             return await query.FirstOrDefaultAsync(predicate,ct);
         }
 
+<<<<<<< HEAD
 =======
 >>>>>>> dev
+=======
+>>>>>>> backup-before-merge
         public async Task<IEnumerable<TEntity>> GetAllAsync(bool tracking = false, CancellationToken ct = default)
         {
             IQueryable<TEntity> query = tracking ? _dbSet : _dbSet.AsNoTracking();

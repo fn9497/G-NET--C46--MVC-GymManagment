@@ -2,9 +2,12 @@
 using GymSystemBLL.Sevice.Classes;
 using GymSystemBLL.Sevice.Interfaces;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using GymSystemBLL.ViewModels.MemberViewModels;
 =======
 >>>>>>> dev
+=======
+>>>>>>> backup-before-merge
 using GymSystemDAL.Repositories.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,23 +16,30 @@ namespace GymSystemPL.Controllers
     public class MembersController : Controller
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         private readonly IMemberService _memberService;
 
         public MembersController(IMemberService memberService)
         {
             _memberService = memberService;
 =======
+=======
+>>>>>>> backup-before-merge
        private readonly IMemberService _memberService;
         public MembersController(IMemberService memberService)
         {
            _memberService = memberService;
+<<<<<<< HEAD
 >>>>>>> dev
+=======
+>>>>>>> backup-before-merge
         }
         public async Task<IActionResult> Index()
         {
            var  members = await _memberService.GetAllMembersAsync();
            return View(members);
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
         [HttpGet]
         public IActionResult Create()
@@ -66,5 +76,7 @@ namespace GymSystemPL.Controllers
 
 =======
 >>>>>>> dev
+=======
+>>>>>>> backup-before-merge
     }
 }

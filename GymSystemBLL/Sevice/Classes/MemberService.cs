@@ -2,18 +2,30 @@
 using GymSystemBLL.Sevice.Interfaces;
 using GymSystemBLL.ViewModels.MemberViewModels;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using GymSystemDAL.Data.Models;
 using GymSystemDAL.Models;
 =======
 >>>>>>> dev
+=======
+
+using GymSystemDAL.Data.Models;
+using GymSystemDAL.Models;
+
+>>>>>>> backup-before-merge
 using GymSystemDAL.Repositories.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Net.Sockets;
 =======
 >>>>>>> dev
+=======
+using System.Net.Sockets;
+
+>>>>>>> backup-before-merge
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +35,10 @@ namespace GymSystemBLL.Sevice.Classes
     {
         private readonly IGenaricRepository<Member> _memberRepository;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> backup-before-merge
         private readonly IGenaricRepository<Membership> _membershipRepository;
         private readonly IGenaricRepository<Plan> _planRepository;
 
@@ -65,13 +81,17 @@ namespace GymSystemBLL.Sevice.Classes
             };
             var result = await _memberRepository.AddAsync(member);
             return result > 0;
+<<<<<<< HEAD
 =======
 
         public MemberService(IGenaricRepository<Member> memberRepository)
         {
             _memberRepository = memberRepository;
 >>>>>>> dev
+=======
+>>>>>>> backup-before-merge
         }
+
 
         public async Task<IEnumerable<MemberViewModel>> GetAllMembersAsync(CancellationToken ct = default)
         {
@@ -88,6 +108,10 @@ namespace GymSystemBLL.Sevice.Classes
             return memberViewModels;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> backup-before-merge
 
         public async Task<MemberViewModel> GetMemberDetailsById(int memberid, CancellationToken ct)
         {
@@ -113,7 +137,11 @@ namespace GymSystemBLL.Sevice.Classes
             return model;
         }
 
+<<<<<<< HEAD
 =======
 >>>>>>> dev
+=======
+
+>>>>>>> backup-before-merge
     }
 }

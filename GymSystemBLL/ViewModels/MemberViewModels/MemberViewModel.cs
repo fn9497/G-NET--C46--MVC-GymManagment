@@ -11,6 +11,10 @@ namespace GymSystemBLL.ViewModels.MemberViewModels
         public int Id { get; set; }
         public string Name { get; set; }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> backup-before-merge
         public string? Photo { get; set; }
         public string Phone { get; set; }
 
@@ -22,6 +26,7 @@ namespace GymSystemBLL.ViewModels.MemberViewModels
         public string? PlanName { get; set; }
         public string? MembershipStartDate { get; set; }
         public string? MembershipEndDate { get; set; }
+<<<<<<< HEAD
 =======
         public string ? Photo { get; set; }
         public string Phone { get; set; }
@@ -29,5 +34,9 @@ namespace GymSystemBLL.ViewModels.MemberViewModels
         public string Email { get; set; } 
         public string Gender { get; set; }
 >>>>>>> dev
+=======
+
+
+>>>>>>> backup-before-merge
     }
 }

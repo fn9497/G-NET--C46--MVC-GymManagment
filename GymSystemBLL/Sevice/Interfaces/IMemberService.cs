@@ -12,10 +12,18 @@ namespace GymSystemBLL.Sevice.Interfaces
     {
         Task<IEnumerable<MemberViewModel>> GetAllMembersAsync(CancellationToken ct = default);
 <<<<<<< HEAD
+<<<<<<< HEAD
         Task<bool> CreateMemberAsync(CreateMemberViewModel model, CancellationToken ct = default);
 
         Task<MemberViewModel> GetMemberDetailsById(int memberid, CancellationToken ct = default);
 =======
 >>>>>>> dev
+=======
+
+        Task<bool> CreateMemberAsync(CreateMemberViewModel model, CancellationToken ct = default);
+
+        Task<MemberViewModel> GetMemberDetailsById(int memberid, CancellationToken ct = default);
+
+>>>>>>> backup-before-merge
     }
 }
