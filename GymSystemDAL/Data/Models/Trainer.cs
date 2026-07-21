@@ -11,6 +11,8 @@ namespace GymSystemDAL.Models
     {
         //HireDate ==> Created At
         public Speciality Speciality { get; set; }
-
+        #region Relationship
+        public ICollection<Session> Sessions { get; set; } = default!;
+        #endregion
     }
 }

@@ -1,7 +1,10 @@
 ﻿using GymSystem.Models;
 using GymSystemBLL.Sevice.Classes;
 using GymSystemBLL.Sevice.Interfaces;
+<<<<<<< HEAD
 using GymSystemBLL.ViewModels.MemberViewModels;
+=======
+>>>>>>> dev
 using GymSystemDAL.Repositories.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,17 +12,25 @@ namespace GymSystemPL.Controllers
 {
     public class MembersController : Controller
     {
+<<<<<<< HEAD
         private readonly IMemberService _memberService;
 
         public MembersController(IMemberService memberService)
         {
             _memberService = memberService;
+=======
+       private readonly IMemberService _memberService;
+        public MembersController(IMemberService memberService)
+        {
+           _memberService = memberService;
+>>>>>>> dev
         }
         public async Task<IActionResult> Index()
         {
            var  members = await _memberService.GetAllMembersAsync();
            return View(members);
         }
+<<<<<<< HEAD
         [HttpGet]
         public IActionResult Create()
         {
@@ -53,5 +64,7 @@ namespace GymSystemPL.Controllers
         }
 
 
+=======
+>>>>>>> dev
     }
 }

@@ -1,13 +1,19 @@
 ﻿using GymSystem.Models;
 using GymSystemBLL.Sevice.Interfaces;
 using GymSystemBLL.ViewModels.MemberViewModels;
+<<<<<<< HEAD
 using GymSystemDAL.Data.Models;
 using GymSystemDAL.Models;
+=======
+>>>>>>> dev
 using GymSystemDAL.Repositories.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+<<<<<<< HEAD
 using System.Net.Sockets;
+=======
+>>>>>>> dev
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +22,7 @@ namespace GymSystemBLL.Sevice.Classes
     public class MemberService : IMemberService
     {
         private readonly IGenaricRepository<Member> _memberRepository;
+<<<<<<< HEAD
         private readonly IGenaricRepository<Membership> _membershipRepository;
         private readonly IGenaricRepository<Plan> _planRepository;
 
@@ -58,6 +65,12 @@ namespace GymSystemBLL.Sevice.Classes
             };
             var result = await _memberRepository.AddAsync(member);
             return result > 0;
+=======
+
+        public MemberService(IGenaricRepository<Member> memberRepository)
+        {
+            _memberRepository = memberRepository;
+>>>>>>> dev
         }
 
         public async Task<IEnumerable<MemberViewModel>> GetAllMembersAsync(CancellationToken ct = default)
@@ -74,6 +87,7 @@ namespace GymSystemBLL.Sevice.Classes
             });
             return memberViewModels;
         }
+<<<<<<< HEAD
 
         public async Task<MemberViewModel> GetMemberDetailsById(int memberid, CancellationToken ct)
         {
@@ -99,5 +113,7 @@ namespace GymSystemBLL.Sevice.Classes
             return model;
         }
 
+=======
+>>>>>>> dev
     }
 }
