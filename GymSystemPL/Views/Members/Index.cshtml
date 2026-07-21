@@ -30,7 +30,7 @@
 
         <div class="container">
             <header class="d-flex justify-content-end mt-5 mb-4 align-items-center">
-                <a asp-controller="Members" asp-action="Create" class="btn btn-fill fw-medium rounded-pill px-3 py-3"> + Add Member </a>
+                <a asp-controller="Members" asp-action="CreateMember" class="btn btn-fill fw-medium rounded-pill px-3 py-3"> + Add Member </a>
             </header>
 
             @if(Model.Any()){
@@ -72,7 +72,7 @@
                                     <ul class="dropdown-menu dropdown-menu-start"
                                         aria-labelledby="dropdownMenuButton-member.Id">
                                         <li>
-                                            <a asp-controller="Members" asp-action="MemberDetails" asp-route-id="@member.Id"
+                                                    <a asp-controller="Members" asp-action="MemberDetails" asp-route-id="@member.Id"
                                                class="dropdown-item d-flex align-items-center gap-3">
                                                 <img src="~/images/info 1.jpg" alt="info icon"
                                                      style="width: 20px; height: 20px;" />

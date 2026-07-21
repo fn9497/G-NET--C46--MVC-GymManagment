@@ -12,27 +12,11 @@ namespace GymSystem
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
             builder.Services.AddScoped<IplanRepository,PlanRepository>();
-=======
             builder.Services.AddScoped(typeof(IGenaricRepository<>) ,typeof(GenaricRepository<>));
             builder.Services.AddScoped<IMemberService, MemberService>();
             builder.Services.AddScoped<ITrainerService, TrainerService>();
->>>>>>> Stashed changes
-=======
-            builder.Services.AddScoped(typeof(IGenaricRepository<>) ,typeof(GenaricRepository<>));
-            builder.Services.AddScoped<IMemberService, MemberService>();
->>>>>>> dev
-=======
-            builder.Services.AddScoped(typeof(IGenaricRepository<>) ,typeof(GenaricRepository<>));
-            builder.Services.AddScoped<IMemberService, MemberService>();
-            builder.Services.AddScoped<ITrainerService, TrainerService>();
->>>>>>> backup-before-merge
             builder.Services.AddDbContext<GymDbContext>(
                 option =>
                 {
