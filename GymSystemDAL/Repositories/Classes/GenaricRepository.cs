@@ -5,10 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-<<<<<<< HEAD
+
 using System.Linq.Expressions;
-=======
->>>>>>> dev
+
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,29 +30,24 @@ namespace GymSystemDAL.Repositories.Classes
             return await _dbContext.SaveChangesAsync();
         }
 
-<<<<<<< HEAD
         public Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct = default)
         {
             return _dbSet.AsNoTracking().AnyAsync(predicate, ct);
         }
 
-=======
->>>>>>> dev
+
         public async Task<int> DeleteAsync(TEntity entity)
         {
             _dbSet.Remove(entity);
             return await _dbContext.SaveChangesAsync();
         }
 
-<<<<<<< HEAD
         public async Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, bool tracking = false, CancellationToken ct = default)
         {
             IQueryable<TEntity> query = tracking ? _dbSet : _dbSet.AsNoTracking();
             return await query.FirstOrDefaultAsync(predicate,ct);
         }
 
-=======
->>>>>>> dev
         public async Task<IEnumerable<TEntity>> GetAllAsync(bool tracking = false, CancellationToken ct = default)
         {
             IQueryable<TEntity> query = tracking ? _dbSet : _dbSet.AsNoTracking();
