@@ -13,7 +13,7 @@
         {
            <div id="alert" class="alert alert-success alert-dismissible fade show">
             <i class="bi bi-check-circle-fill me-2"></i>
-            member created successfully
+                @TempData["SuccessMessage"]
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
         }
@@ -24,13 +24,13 @@
         {
             <div id="Alert" class="alert alert-danger alert-dismissible fade show">
                 <i class="bi bi-exclamation-triangle-fill me-2"></i>
-            Member Failed To Create
+                @TempData["ErrorMessage"]
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>}
 
         <div class="container">
             <header class="d-flex justify-content-end mt-5 mb-4 align-items-center">
-                <a asp-controller="Members" asp-action="CreateMember" class="btn btn-fill fw-medium rounded-pill px-3 py-3"> + Add Member </a>
+                <a asp-controller="Members" asp-action="Create" class="btn btn-fill fw-medium rounded-pill px-3 py-3"> + Add Member </a>
             </header>
 
             @if(Model.Any()){
@@ -53,7 +53,7 @@
                         <tr>
                             <td>
                                 <span class="avatar">
-                                    <img src="~/images/User.jpg" alt="Default Avatar" class="rounded-circle"
+                                    <img src="~/images/logo.jpg" alt="Default Avatar" class="rounded-circle"
                                          style="width: 40px; height: 40px;" />
                                 </span>
                             </td>
@@ -80,7 +80,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a asp-controller="Members" asp-action="HealthRecordDetails" asp-route-id="@member.Id"
+                                                    <a asp-controller="Members" asp-action="HealthRecordDetails" asp-route-id="@member.Id"
                                                class="dropdown-item d-flex align-items-center gap-3">
                                                 <img src="~/images/info 1.jpg" alt="info icon"
                                                      style="width: 20px; height: 20px;" />

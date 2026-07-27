@@ -1,4 +1,4 @@
-﻿/* ^ global style */
+/* ^ global style */
 
 :root {
     --primary-color: #070093;
@@ -572,7 +572,6 @@ footer .footer-content .location p {
         background-clip: border-box; /* ensure normal coloring */
         -webkit-text-fill-color: var(--primary-color); /* fix text rendering */
     }
-
 .explore-more {
     background-color: transparent;
     color: var(--primary-color);

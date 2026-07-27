@@ -14,8 +14,14 @@ namespace GymSystemBLL.Sevice.Interfaces
 
         Task<bool> CreateMemberAsync(CreateMemberViewModel model, CancellationToken ct = default);
 
-        Task<MemberViewModel> GetMemberDetailsById(int memberid, CancellationToken ct = default);
+        Task<MemberViewModel?> GetMemberDetailsById(int memberid, CancellationToken ct = default);
 
+        Task<HealthRecordViewModel?> GetHealthRecordDetails(int memberid ,CancellationToken ct = default);
 
+        Task<MemberToUpdateViewModel?> GetMemberToUpdate(int memberid, CancellationToken ct = default);
+
+        Task <bool>UpdateMemberDetails( int memberid , MemberToUpdateViewModel model, CancellationToken ct = default);
+
+        Task<bool> DeleteMemberAsync(int memberid, CancellationToken ct = default);
     }
 }
