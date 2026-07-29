@@ -17,6 +17,8 @@ namespace GymSystem
             builder.Services.AddScoped(typeof(IGenaricRepository<>) ,typeof(GenaricRepository<>));
             builder.Services.AddScoped<IMemberService, MemberService>();
             builder.Services.AddScoped<ITrainerService, TrainerService>();
+            builder.Services.AddScoped<IPlanService, PlanService>();
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddDbContext<GymDbContext>(
                 option =>
                 {
