@@ -1,4 +1,5 @@
 using GymSystem.DbContexts;
+using GymSystemBLL;
 using GymSystemBLL.Sevice.Classes;
 using GymSystemBLL.Sevice.Interfaces;
 using GymSystemDAL.Repositories.Classes;
@@ -13,18 +14,16 @@ namespace GymSystem
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<IplanRepository,PlanRepository>();
             builder.Services.AddScoped(typeof(IGenaricRepository<>) ,typeof(GenaricRepository<>));
             builder.Services.AddScoped<IMemberService, MemberService>();
             builder.Services.AddScoped<ITrainerService, TrainerService>();
             builder.Services.AddScoped<IPlanService, PlanService>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-            builder.Services.AddDbContext<GymDbContext>(
-                option =>
-                {
-                    option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-                });
-
+            builder.Services.AddScoped<ISessionRepository, SessionRepository>();
+            builder.Services.AddScoped<IsessionService, SessionService>();
+            builder.Services.AddDbContext<GymDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddAutoMapper(m=> m.AddProfile (new MappingProfile()));
 
             var app = builder.Build();
 

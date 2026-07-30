@@ -1,4 +1,5 @@
-﻿using GymSystem.Models;
+﻿using AutoMapper;
+using GymSystem.Models;
 using GymSystemBLL.Sevice.Classes;
 using GymSystemBLL.Sevice.Interfaces;
 using GymSystemBLL.ViewModels.MemberViewModels;
@@ -11,7 +12,8 @@ namespace GymSystemPL.Controllers
     public class MembersController : Controller
     {
        private readonly IMemberService _memberService;
-        public MembersController(IMemberService memberService)
+
+        public MembersController(IMemberService memberService )
         {
            _memberService = memberService;
         }
