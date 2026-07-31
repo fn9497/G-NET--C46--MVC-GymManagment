@@ -2,26 +2,26 @@
 using GymSystem.Models;
 using GymSystemDAL.Data.Models;
 using GymSystemDAL.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using System.Reflection.Emit;
 
 namespace GymSystem.DbContexts
 {
-    public class GymDbContext :DbContext
+    public class GymDbContext :IdentityDbContext<ApplicationUser>
     {
         public GymDbContext(DbContextOptions options) : base(options)
         {
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("Server=.;Database=GymSystem;Trusted_Connection=True;TrustServerCertificate=true");
-        //}
 
-        override protected void OnModelCreating(ModelBuilder modelBuilder)
+
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            // modelBuilder.ApplyConfiguration<Plan>(new PlanConfiguration());
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            base.OnModelCreating(builder);
+            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
         }
 
         public DbSet<Plan> Plans { get; set; }

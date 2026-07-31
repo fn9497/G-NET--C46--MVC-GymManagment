@@ -4,18 +4,22 @@ using GymSystemBLL.Sevice.Classes;
 using GymSystemBLL.Sevice.Interfaces;
 using GymSystemBLL.ViewModels.MemberViewModels;
 using GymSystemDAL.Repositories.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GymSystemPL.Controllers
 {
+    [Authorize(Roles = "SuperAdmin")]
     public class MembersController : Controller
     {
        private readonly IMemberService _memberService;
+        private readonly IAttachmentService _attachmentService;
 
-        public MembersController(IMemberService memberService )
+        public MembersController(IMemberService memberService ,IAttachmentService attachmentService)
         {
            _memberService = memberService;
+            _attachmentService = attachmentService;
         }
         public async Task<IActionResult> Index()
         {
@@ -23,7 +27,17 @@ namespace GymSystemPL.Controllers
             return View(members);
         }
 
+        public async Task<IActionResult> Picture(int id)
+        {
+            var member = await _memberService.GetMemberDetailsById(id);
+            if (member is null || string.IsNullOrEmpty(member.Photo))
+                return NotFound();
 
+            var result = _attachmentService.GetFile(member.Photo, "MemberPicture");
+            if(result is null)return NotFound();
+
+            return File(result.Value.stream, result.Value.contenttype);
+        }
         [HttpGet]
         public IActionResult Create()
         {

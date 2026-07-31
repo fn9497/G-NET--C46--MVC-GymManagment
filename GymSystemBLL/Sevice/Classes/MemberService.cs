@@ -23,11 +23,13 @@ namespace GymSystemBLL.Sevice.Classes
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IAttachmentService _attachmentService;
 
-        public MemberService( IUnitOfWork unitOfWork , IMapper mapper)
+        public MemberService( IUnitOfWork unitOfWork , IMapper mapper , IAttachmentService attachmentService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _attachmentService = attachmentService;
         }
 
         public async Task<bool> CreateMemberAsync(CreateMemberViewModel model, CancellationToken ct = default)
@@ -38,7 +40,11 @@ namespace GymSystemBLL.Sevice.Classes
             var phoneexists = await _unitOfWork.GetRepository<Member>().AnyAsync(x => x.Phone == model.Phone, ct);
             if (emailexists || phoneexists) return false;
             var member = _mapper.Map<CreateMemberViewModel,Member>(model);
+            var newphotoname = await _attachmentService.UploadAsync(model.PhotoFile.OpenReadStream(), model.PhotoFile.FileName, "MemberPicture", ct);
+            if (string.IsNullOrEmpty(newphotoname)) return false;
+            member.Photo = newphotoname;
             _unitOfWork.GetRepository<Member>().AddAsync(member);
+
             var result =await _unitOfWork.SaveChangesAsync(ct);
             return result > 0;
         }
@@ -49,7 +55,12 @@ namespace GymSystemBLL.Sevice.Classes
             if (member == null) return false;
             var hasFutureBooking = await _unitOfWork.GetRepository<Booking>().AnyAsync(x => x.MemberId == memberid && x.Session.StartDate > DateTime.Now, ct);
             if (hasFutureBooking) return false;
-            _unitOfWork.GetRepository<Member>().DeleteAsync(member);
+             _unitOfWork.GetRepository<Member>().DeleteAsync(member);
+           if(member.Photo is not null)
+            {
+                _attachmentService.Delete(member.Photo, "MemberPicture");
+            }
+
             var result =await _unitOfWork.SaveChangesAsync(ct);
             return result > 0;
         }

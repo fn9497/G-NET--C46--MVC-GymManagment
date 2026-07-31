@@ -53,8 +53,23 @@
                         <tr>
                             <td>
                                 <span class="avatar">
-                                    <img src="~/images/logo.jpg" alt="Default Avatar" class="rounded-circle"
-                                         style="width: 40px; height: 40px;" />
+                                    @if(!string.IsNullOrEmpty(member.Photo))
+                                            {
+                                              <img src="@Url.Action("Picture","Members", new {IDataTokensMetadata = member.Id})"
+                                              alt="@member.Name" 
+                                                class="rounded-circle"
+                                                style="width: 40px; height: 40px;" />
+                                            }
+                                            else
+                                            {
+                                              <img src="~/images/phone icon.jpg" 
+                                                alt="Default Avatar" 
+                                                class="rounded-circle"
+                                                style="width: 40px; height: 40px;" />
+                                            }
+                                            @*another way to handle*@
+                                        @*   <img src="MemberPicture/@member.Photo" alt="Default Avatar" class="rounded-circle"
+                                         style="width: 40px; height: 40px;" />*@ 
                                 </span>
                             </td>
                             <td><span>@member.Name</span></td>
